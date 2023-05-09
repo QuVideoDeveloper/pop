@@ -142,7 +142,7 @@ static bool FBCompareTypeEncoding(const char *objctype, POPValueType type)
   }
 }
 
-POPValueType POPSelectValueType(const char *objctype, const POPValueType *types, size_t length)
+POPValueType POPSelectValueType(const char *objctype, enum POPValueType *types, size_t length)
 {
   if (NULL != objctype) {
     for (size_t idx = 0; idx < length; idx++) {
@@ -153,7 +153,7 @@ POPValueType POPSelectValueType(const char *objctype, const POPValueType *types,
   return kPOPValueUnknown;
 }
 
-POPValueType POPSelectValueType(id obj, const POPValueType *types, size_t length)
+POPValueType POPSelectValueType(id obj, enum POPValueType *types, size_t length)
 {
   if ([obj isKindOfClass:[NSValue class]]) {
     return POPSelectValueType([obj objCType], types, length);
@@ -163,9 +163,9 @@ POPValueType POPSelectValueType(id obj, const POPValueType *types, size_t length
   return kPOPValueUnknown;
 }
 
-const POPValueType kPOPAnimatableAllTypes[12] = {kPOPValueInteger, kPOPValueFloat, kPOPValuePoint, kPOPValueSize, kPOPValueRect, kPOPValueEdgeInsets, kPOPValueAffineTransform, kPOPValueTransform, kPOPValueRange, kPOPValueColor, kPOPValueSCNVector3, kPOPValueSCNVector4};
+enum POPValueType kPOPAnimatableAllTypes[12] = {kPOPValueInteger, kPOPValueFloat, kPOPValuePoint, kPOPValueSize, kPOPValueRect, kPOPValueEdgeInsets, kPOPValueAffineTransform, kPOPValueTransform, kPOPValueRange, kPOPValueColor, kPOPValueSCNVector3, kPOPValueSCNVector4};
 
-const POPValueType kPOPAnimatableSupportTypes[10] = {kPOPValueInteger, kPOPValueFloat, kPOPValuePoint, kPOPValueSize, kPOPValueRect, kPOPValueEdgeInsets, kPOPValueColor, kPOPValueSCNVector3, kPOPValueSCNVector4};
+enum POPValueType kPOPAnimatableSupportTypes[10] = {kPOPValueInteger, kPOPValueFloat, kPOPValuePoint, kPOPValueSize, kPOPValueRect, kPOPValueEdgeInsets, kPOPValueColor, kPOPValueSCNVector3, kPOPValueSCNVector4};
 
 NSString *POPValueTypeToString(POPValueType t)
 {

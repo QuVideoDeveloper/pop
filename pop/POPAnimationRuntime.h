@@ -37,22 +37,22 @@ using namespace POP;
 /**
  Returns value type based on objc type description, given list of supported value types and length.
  */
-extern POPValueType POPSelectValueType(const char *objctype, const POPValueType *types, size_t length);
+extern POPValueType POPSelectValueType(const char *objctype, enum POPValueType *types, size_t length);
 
 /**
  Returns value type based on objc object, given a list of supported value types and length.
  */
-extern POPValueType POPSelectValueType(id obj, const POPValueType *types, size_t length);
+extern POPValueType POPSelectValueType(id obj, enum POPValueType *types, size_t length);
 
 /**
  Array of all value types.
  */
-extern const POPValueType kPOPAnimatableAllTypes[12];
+extern enum POPValueType kPOPAnimatableAllTypes[12];
 
 /**
  Array of all value types supported for animation.
  */
-extern const POPValueType kPOPAnimatableSupportTypes[10];
+extern enum POPValueType kPOPAnimatableSupportTypes[10];
 
 /**
  Returns a string description of a value type.

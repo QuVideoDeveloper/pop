@@ -13,7 +13,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
-const POPValueType supportedVelocityTypes[6] = { kPOPValuePoint, kPOPValueInteger, kPOPValueFloat, kPOPValueRect, kPOPValueSize, kPOPValueEdgeInsets };
+enum POPValueType supportedVelocityTypes[6] = { kPOPValuePoint, kPOPValueInteger, kPOPValueFloat, kPOPValueRect, kPOPValueSize, kPOPValueEdgeInsets };
 
 @implementation POPDecayAnimation
 
